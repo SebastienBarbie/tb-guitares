@@ -35,6 +35,10 @@ for each row execute function public.set_updated_at();
 alter table public.admin_users enable row level security;
 alter table public.guitars enable row level security;
 
+grant select on public.guitars to anon, authenticated;
+grant select on public.admin_users to authenticated;
+grant insert, update, delete on public.guitars to authenticated;
+
 drop policy if exists "Admins can read admin list" on public.admin_users;
 create policy "Admins can read admin list" on public.admin_users
 for select to authenticated using (user_id = auth.uid());
