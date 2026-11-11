@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function Footer(){return <footer className="mt-24 border-t border-[var(--line)] py-10"><div className="container flex flex-col justify-between gap-6 text-xs text-[var(--muted)] md:flex-row"><div><div className="mb-2 tracking-[.2em] text-[var(--ink)]">TB GUITARES</div><p>Des instruments choisis avec exigence.</p></div><div className="flex gap-6 uppercase tracking-widest"><Link href="/catalogue">Catalogue</Link><Link href="/contact">Contact</Link></div><p>© {new Date().getFullYear()} TB GUITARES</p></div></footer>}
